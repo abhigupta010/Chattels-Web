@@ -1,54 +1,56 @@
 import React from 'react'
-import { IoBagHandle, IoPieChart, IoPeople, IoCart } from 'react-icons/io5'
+import { IoPersonCircleSharp, } from 'react-icons/io5'
+import { ImDatabase } from "react-icons/im";
+import { MdAssignmentTurnedIn,MdOutlineAutoDelete } from "react-icons/md";
 
 export default function DashboardStatsGrid() {
 	return (
 		<div className="flex gap-4">
 			<BoxWrapper>
 				<div className="rounded-full h-12 w-12 flex items-center justify-center bg-sky-500">
-					<IoBagHandle className="text-2xl text-white" />
+					<IoPersonCircleSharp className="text-4xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Total Sales</span>
+					<span className="text-sm text-gray-500 font-light">Total Employees</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">$54232</strong>
-						<span className="text-sm text-green-500 pl-2">+343</span>
+						<strong className="text-xl text-gray-700 font-semibold">590</strong>
+						<span className="text-sm text-green-500 pl-2">Working</span>
 					</div>
 				</div>
 			</BoxWrapper>
 			<BoxWrapper>
 				<div className="rounded-full h-12 w-12 flex items-center justify-center bg-orange-600">
-					<IoPieChart className="text-2xl text-white" />
+					<ImDatabase className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Total Expenses</span>
+					<span className="text-sm text-gray-500 font-light">Total Inventory</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">$3423</strong>
-						<span className="text-sm text-green-500 pl-2">-343</span>
+						<strong className="text-xl text-gray-700 font-semibold">1200</strong>
+						<span className="text-sm text-green-500 pl-2">Purchased</span>
 					</div>
 				</div>
 			</BoxWrapper>
 			<BoxWrapper>
 				<div className="rounded-full h-12 w-12 flex items-center justify-center bg-yellow-400">
-					<IoPeople className="text-2xl text-white" />
+					<MdAssignmentTurnedIn className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Total Customers</span>
+					<span className="text-sm text-gray-500 font-light">Assigned Inventory</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">12313</strong>
-						<span className="text-sm text-red-500 pl-2">-30</span>
+						<strong className="text-xl text-gray-700 font-semibold">1000</strong>
+						<span className="text-sm text-red-500 pl-2">Avail-150</span>
 					</div>
 				</div>
 			</BoxWrapper>
 			<BoxWrapper>
 				<div className="rounded-full h-12 w-12 flex items-center justify-center bg-green-600">
-					<IoCart className="text-2xl text-white" />
+					<MdOutlineAutoDelete className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Total Orders</span>
+					<span className="text-sm text-gray-500 font-light">Defected Inventory</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">16432</strong>
-						<span className="text-sm text-red-500 pl-2">-43</span>
+						<strong className="text-xl text-gray-700 font-semibold">35</strong>
+						<span className="text-sm text-red-500 pl-2">Resold-15</span>
 					</div>
 				</div>
 			</BoxWrapper>
