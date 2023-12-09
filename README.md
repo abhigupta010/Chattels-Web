@@ -1,3 +1,9 @@
-## Openshop Analytics Dashboard
+## Chattels Web based application
 
-A demo React Analytics Dashboard with clean and beautiful UI. This is made for a YouTube Playlist - https://www.youtube.com/watch?v=Ou-rZsXRciI&list=PLwHsNjmBZ-MJnVNyiaVYHW_dDA5n3mbVk
+Steps to run this application on browser
+1. Clone this repo and open into vsCode 
+2. Open terminal then go to project directory (using cd <folderName> command)
+3. Now, run npm install command if not installing then use npm install --force
+4. Very last step, Run npm start
+
+Thank You.......

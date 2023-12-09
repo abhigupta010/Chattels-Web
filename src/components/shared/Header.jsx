@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Menu, Popover, Transition } from '@headlessui/react'
-import { HiOutlineBell, HiOutlineSearch, HiOutlineChatAlt } from 'react-icons/hi'
+import {  HiOutlineSearch } from 'react-icons/hi'
+import { FcAbout,FcAdvertising } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -27,7 +28,7 @@ export default function Header() {
 									'group inline-flex items-center rounded-sm p-1.5 text-gray-700 hover:text-opacity-100 focus:outline-none active:bg-gray-100'
 								)}
 							>
-								<HiOutlineChatAlt fontSize={24} />
+								<FcAbout fontSize={24} />
 							</Popover.Button>
 							<Transition
 								as={Fragment}
@@ -57,7 +58,7 @@ export default function Header() {
 									'group inline-flex items-center rounded-sm p-1.5 text-gray-700 hover:text-opacity-100 focus:outline-none active:bg-gray-100'
 								)}
 							>
-								<HiOutlineBell fontSize={24} />
+								<FcAdvertising fontSize={24} />
 							</Popover.Button>
 							<Transition
 								as={Fragment}
