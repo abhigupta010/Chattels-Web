@@ -1,0 +1,262 @@
+
+body {
+	/* font-family: 'Rajdhani', sans-serif; */
+	line-height: 1.5;
+	/* min-height: 100vh; */
+	display: grid;
+	align-items: center;
+	/* justify-content: center;
+     */
+	color: #393232;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.card-list {
+	width: 100%;
+	max-width: 400px;
+
+}
+
+.column {
+	display: grid;
+	grid: auto/ auto auto auto auto;
+	row-gap: 20px;
+	margin-left: 10px;
+	column-gap: 10px;
+}
+
+.card {
+	border: 2px solid #d1f7f6;
+	background-color: #FFF;
+	box-shadow: 0 0 0 1px rgba(#000, .05), 0 20px 50px 0 rgba(#000, .1);
+	border-radius: 15px;
+	overflow: hidden;
+	padding: 0.1rem 0rem 0.5rem ;
+	position: relative;
+	transition: .15s ease-in;
+
+	&:hover,
+	&:focus-within {
+		box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+		transform: translatey(-5px);
+	}
+}
+
+.card-image {
+	border-radius: 10px;
+	overflow: hidden;
+	width: 60%;
+}
+
+.card-header {
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.icon-button {
+	border: 0;
+	background-color: #fff;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	font-size: 1.25rem;
+	transition: .25s ease;
+	box-shadow: 0 0 0 1px rgba(#000, .05), 0 3px 8px 0 rgba(#000, .15);
+	z-index: 1;
+	cursor: pointer;
+	color: #565656;
+
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+
+	/* &:hover,
+	&:focus {
+		background-color: #EC4646;
+		color: #FFF;
+	} */
+}
+
+.card-footer {
+	margin-top: .25rem;
+	border-top: 1px solid #ddd;
+	padding-top: .25rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card-meta {
+	display: flex;
+	align-items: center;
+	color: #787878;
+
+	svg {
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+		margin-right: .25em;
+	}
+}
+
+.icons {
+	display: flex;
+	margin-top: -2rem;
+}
+
+.back-btn {
+	background-color: #0e7490;
+	color: #fff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	border-radius: 0.5rem;
+	display: inline-block;
+}
+
+body {
+	background-color: #f0f0f0;
+	font-family: roboto;
+  }
+  .container {
+	width: 400px;
+	margin: 120px auto 0;
+	background-color: #fff;
+	padding: 0 20px 20px;
+	border-radius: 12rem;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+	-moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+	text-align: center;
+  }
+
+  .avatar-flip {
+	border-radius: 100px;
+	overflow: hidden;
+	height: 150px;
+	width: 150px;
+	position: relative;
+	margin: auto;
+	top: -60px;
+  }
+  .avatar-flip img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 100px;
+  }
+  h2 {
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #333;
+  }
+  h4 {
+	font-size: 13px;
+	color: #00baff;
+	letter-spacing: 1px;
+	margin-bottom: 25px
+  }
+  p {
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 20px;
+	color: #666;
+  }
+  .heading-div{
+	margin-top: -2rem;
+  }
+  .hover-info{
+	color: #5663f1;
+	&:hover,
+	&:focus-within {
+		box-shadow: 0 0 0 2px #a481eb, 0 10px 60px 0 rgba(#000, .1);
+		transform: translatey(-5px);
+	}
+  }
+  .hover-edit{
+	color: #7af156;
+	&:hover,	
+	&:focus-within {
+		box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+		transform: translatey(-5px);
+	}
+  }
+  .hover-delete{
+	color: #e62929;
+	&:hover,
+	&:focus-within {
+		box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+		transform: translatey(-5px);
+	}
+  }
+  .titleHeading{
+	color: #2196F3;
+  }
+
+
+  /* Basic reset for margin and padding */
+body, ul {
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Styling for the section */
+  section {
+	margin: 10px;
+  }
+  
+  /* Styling for the list */
+  .check-list {
+	list-style: none; /* Removes default list styles */
+	padding-left: 10px; /* Adds left padding for better readability */
+  }
+  
+  /* Styling for list items */
+  .check-list li {
+	position: relative; /* Allows positioning of pseudo-elements */
+	padding-left: 20px; /* Adds space before text */
+	margin-bottom: 8px; /* Adds space between list items */
+	color: #333; /* Text color for list items *//* Font size for list items */
+	line-height: 1.5; /* Line height for better readability */
+  }
+  
+  /* Styling for custom bullet point */
+  .check-list li::before {
+	content: '•'; /* Custom bullet point (you can change it) */
+	position: absolute; /* Position it absolutely */
+	left: 0; /* Position it to the left */
+	color: #FF4500; /* Color of the bullet point */
+	font-size: 12px; /* Size of the bullet point */
+  }
+  
+  /* Styling for checked items */
+  .check-list li.done {
+	text-decoration: line-through; /* Add strikethrough for checked items */
+	color: #888; /* Change color for checked items */
+	/* You can adjust color and other styles as per your design */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
