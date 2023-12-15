@@ -1,5 +1,5 @@
 import { HiOutlineViewGrid, HiOutlineUsers, HiOutlineQuestionMarkCircle, HiOutlineCog } from 'react-icons/hi'
-import { MdOutlineInventory2, MdOutlineAssignmentTurnedIn } from 'react-icons/md'
+import { MdOutlineInventory2, MdOutlineAssignmentTurnedIn } from 'react-icons/md';
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
