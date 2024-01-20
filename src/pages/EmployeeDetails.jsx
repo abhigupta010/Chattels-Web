@@ -5,10 +5,27 @@ import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
 import { empDetails } from '../Constant'
 import SubHeader from '../components/shared/SubHeader'
+import { Dialog } from 'primereact/dialog';
+import EditEmployeeForm from './EditEmployeeForm'
+import { empActions } from '../reducers/empslice';
+import { useSelector, useDispatch } from 'react-redux'
+import { Button } from 'primereact/button';
+import { DeleteEmployeeForm } from './DeleteEmployeeForm'
+import { useEffect } from 'react'
 
 function EmployeeDetails() {
-  
+  const count = useSelector((state) => state.emp)
   const [, setIsShow] = React.useState(false)
+  const [showeditbbox, setshoweditbox]=React.useState(false);
+  const [showdeletebox, setshowdeletebox]=React.useState(false);
+  const [visible, setVisible] = React.useState(false);
+  const [deleteEmp, setdeleteEmp] = React.useState(false);
+  const dispatch = useDispatch()
+
+   useEffect(()=>
+   {
+    
+   },[count])
   function IconButton({ to, icon }) {
     return (
       <button className="icon-button">
@@ -17,11 +34,27 @@ function EmployeeDetails() {
     )
   }
 
+
+  const deleteHandler=(e)=>
+  {
+    setshowdeletebox(true);
+    setdeleteEmp(e);
+     
+
+  }
+
+  const editHandler=(emp)=>
+  {
+    setVisible(emp);
+    setshoweditbox(true);
+    console.log(showeditbbox);
+  }
+
   function CardMetaViews(setIsShow, emp) {
     return (
       <section>
         <div>
-          <h6 className='text-sm'>Employee Details</h6>
+          <h6 className='text-sm' onClick={() => dispatch(test())}>Employee Details</h6>
           <ul class="check-list">
             {emp?.phone && (
               <li className='text-xs'>
@@ -52,7 +85,7 @@ function EmployeeDetails() {
     <div>
       <SubHeader />
       <div class="column">
-        {empDetails?.map((emp) => {
+        {count?.map((emp) => {
           return (
             <div className="card-list">
               <article className="card">
@@ -67,20 +100,25 @@ function EmployeeDetails() {
                   </div>
                   <div className="icons">
                     <IconButton
-                      to={`/books/edit/`}
+                      to=''
+                    
                       icon={
                         <AiOutlineEdit
                           className="hover-edit text-xs text-yellow-600"
                           size={'1rem'}
+                          onClick={()=>{editHandler(emp)}}
+
                         />
                       }
                     />
+
                     <IconButton
-                      to={`/books/delete/`}
+                      to=''
                       icon={
                         <MdOutlineDelete
                           className="hover-delete text-xs text-red-600"
                           size={'1rem'}
+                          onClick={()=>{deleteHandler(emp.emp_id)}}
                         />
                       }
                     />
@@ -91,10 +129,17 @@ function EmployeeDetails() {
                   {CardMetaViews(setIsShow, emp)}
                 </div>
               </article>
-            </div>
+           
+           
+              {showeditbbox&&<EditEmployeeForm showeditbbox={showeditbbox} setshoweditbox={setshoweditbox} empdata={visible} />}
+              {showdeletebox && <DeleteEmployeeForm showdeletebox={showdeletebox} setshowdeletebox={setshowdeletebox} empid={deleteEmp}></DeleteEmployeeForm>}
+              </div>
+            
           )
         })}
+    
       </div>
+      
     </div>
   )
 }
