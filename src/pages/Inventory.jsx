@@ -5,8 +5,18 @@ import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
 import { invontoryDetails } from '../Constant'
 import SubHeader from '../components/shared/SubHeader'
+import EditInventory from './EditInventory'
 import './Pages.css'
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import DeleteInventor from './DeleteInventory'
 export default function Cards() {
+    const [inventoryBox, setInventoryBox]=React.useState(false)
+    
+    const inventoryData= useSelector((state) => state.inventory)
+    const [visible, setVisible]=React.useState({});
+    const [inventoryId, setInventoryId]=React.useState(0);
+    const [inventoryDeleteBox, setInventoryDeleteBox]=React.useState(false)
     const [, setIsShow] = React.useState(false)
     function IconButton({ to, icon }) {
         return (
@@ -15,6 +25,21 @@ export default function Cards() {
             </button>
         )
     }
+    useEffect(()=>
+    {
+
+    },[inventoryData])
+    const inventoryEditHandler=(emp)=>
+    {
+        setVisible(emp);
+        setInventoryBox(true);
+    }
+    const inventoryDeleteHandler=(id)=>
+    {
+        setInventoryId(id);
+        setInventoryDeleteBox(true);
+    }
+
 
     function CardMetaViews(setIsShow, inventory) {
         return (
@@ -35,7 +60,7 @@ export default function Cards() {
         <div>
              <SubHeader/>
         <div class="column">
-            {invontoryDetails?.map((inventory) => {
+            {inventoryData?.map((inventory) => {
                 return (
                     <div className="card-list">
                         <article className="card">
@@ -46,20 +71,22 @@ export default function Cards() {
                                 </div>
                                 <div className="icons">
                                     <IconButton
-                                        to={`/books/edit/`}
+                                        to=''
                                         icon={
                                             <AiOutlineEdit
                                                 className="hover-edit text-xs text-yellow-600"
                                                 size={'1rem'}
+                                                onClick={()=>inventoryEditHandler(inventory)}
                                             />
                                         }
                                     />
                                     <IconButton
-                                        to={`/books/delete/`}
+                                        to=''
                                         icon={
                                             <MdOutlineDelete
                                                 className="hover-delete text-xs text-red-600"
                                                 size={'1rem'}
+                                                onClick={()=>inventoryDeleteHandler(inventory.id)}
                                             />
                                         }
                                     />
@@ -74,6 +101,14 @@ export default function Cards() {
             {/* {
         isShow && <BookInfo isShow={isShow} setIsShow={setIsShow} title={title} author={author} publisher={publisher} description={description}/>
       } */}
+      {
+        inventoryBox && <EditInventory setshowinventorybox ={setInventoryBox} showinventorybbox={inventoryBox} inventorydata={visible}></EditInventory>
+          
+      }
+            {
+        inventoryDeleteBox && <DeleteInventor setshowdeletebox ={setInventoryDeleteBox} showdeletebox={inventoryDeleteBox} id={inventoryId}></DeleteInventor>
+          
+      }
         </div>
         </div>
     )
