@@ -4,9 +4,9 @@ import AssignedInventory from './pages/AssignedInventory'
 import Dashboard from './pages/Dashboard'
 import Inventory from './pages/Inventory'
 import EmployeeDetails from './pages/EmployeeDetails'
-
+import { Home } from './components/shared/Home'
 function App() {
-    return (
+    return (            
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
@@ -14,7 +14,9 @@ function App() {
                     <Route path="inventory" element={<Inventory />} />
                      <Route path="/assignedinventory" element={<AssignedInventory />} />
                      <Route path="/employees" element={<EmployeeDetails />} />
+                     
                 </Route>
+                <Route path="/home" element={<Home />} />
             </Routes>
         </Router>
     )
