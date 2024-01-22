@@ -1,15 +1,10 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai'
-import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
-import { empDetails } from '../Constant'
 import SubHeader from '../components/shared/SubHeader'
-import { Dialog } from 'primereact/dialog';
 import EditEmployeeForm from './EditEmployeeForm'
-import { empActions } from '../reducers/empslice';
 import { useSelector, useDispatch } from 'react-redux'
-import { Button } from 'primereact/button';
 import { DeleteEmployeeForm } from './DeleteEmployeeForm'
 import { useEffect } from 'react'
 
@@ -55,7 +50,7 @@ function EmployeeDetails() {
       <section>
         <div>
           <h6 className='text-sm' onClick={() => dispatch(test())}>Employee Details</h6>
-          <ul class="check-list">
+          <ul className="check-list">
             {emp?.phone && (
               <li className='text-xs'>
                 {"Phone: " + emp.phone}
@@ -84,7 +79,7 @@ function EmployeeDetails() {
   return (
     <div>
       <SubHeader />
-      <div class="column">
+      <div className="column">
         {count?.map((emp) => {
           return (
             <div className="card-list">

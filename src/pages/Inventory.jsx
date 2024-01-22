@@ -1,13 +1,11 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai'
-import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
-import { invontoryDetails } from '../Constant'
 import SubHeader from '../components/shared/SubHeader'
 import EditInventory from './EditInventory'
 import './Pages.css'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import DeleteInventor from './DeleteInventory'
 export default function Cards() {
@@ -46,7 +44,7 @@ export default function Cards() {
 			<section>
 			<div>
 			  <h6 className='text-sm'>Inventory Specification</h6>
-			  <ul class="check-list">
+			  <ul className="check-list">
 				{inventory?.ram&&<li className='text-xs'>{"RAM: " + inventory.ram}</li>}
 				{inventory?.processor&&<li className='text-xs'>{"Proccessor: "+inventory.processor}</li>}
 				{inventory?.generation&&<li className='text-xs'>{"Generation: "+inventory.generation}</li>}
@@ -59,7 +57,7 @@ export default function Cards() {
     return (
         <div>
              <SubHeader/>
-        <div class="column">
+        <div className="column">
             {inventoryData?.map((inventory) => {
                 return (
                     <div className="card-list">

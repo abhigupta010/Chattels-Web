@@ -35,21 +35,21 @@ export const SignUp = () => {
     <div className="container container-left">
     <div className="forms-container">
       <div className="signup">
-      <form  onSubmit={submitHandler} class="sign-up-form">
-          <h2 class="title">Sign Up</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
+      <form  onSubmit={submitHandler} className="sign-up-form">
+          <h2 className="title">Sign Up</h2>
+          <div className="input-field">
+            <i className="fas fa-user"></i>
             <input type="text" value={form.emp_name} id="emp_name" placeholder="Username" onChange={(e)=>changeHandler(e)} />
           </div>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
+          <div className="input-field">
+            <i className="fas fa-envelope"></i>
             <input type="email" value={form.emp_email} id="emp_email" placeholder="Email" onChange={(e)=>changeHandler(e)}/>
           </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
+          <div className="input-field">
+            <i className="fas fa-lock"></i>
             <input type="password" value={form.password} id="password" placeholder="Password" onChange={(e)=>changeHandler(e)}/>
           </div>
-          <Button type="submit" label="Submit" class="btn solid"/>
+          <Button type="submit" label="Submit" className="btn solid"/>
         </form>
      <p className="sign-up">Already have an account ?<a href="/">Sign In</a>
      </p>
